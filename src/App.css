@@ -14,8 +14,8 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 .card-outer{
-  height: calc((100vh - 95px) / 4);
-  max-height: calc((100vw - 95px) / 4);
+  height: calc((100vh - 115px) / 4);
+  max-height: calc((100vw - 115px) / 4);
   perspective: 1000px;
 }
 .card {
@@ -37,6 +37,7 @@ body {
 .card .front img{
   display: block;
   max-width: 100%;
+  height: inherit;
 }
 .card .back{
   background-color: #468;
@@ -52,4 +53,11 @@ footer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  grid-column: 1/5;
+}
+.stats span {
+  margin-left: 5px;
+}
+.links a {
+  margin-left: 5px;
 }

@@ -5,6 +5,7 @@ import Confetti from 'react-confetti'
 import { Button, Modal } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import './App.css'
+import Footer from './components/Footer'
 
 const App = () => {
   const [cards, setCards] = useState(shuffle([...Images, ...Images]));
@@ -48,6 +49,7 @@ const App = () => {
     setClicks(0);
     setActiveCards([])
     setFoundPairs([])
+    setCards(shuffle([...Images, ...Images]))
   }
 
 
@@ -95,12 +97,14 @@ const App = () => {
             )
           })
         }
+        <Footer 
+          restart={restart} 
+          clicks={clicks} 
+          won={won} 
+          pairs={foundPairs.length / 2} 
+        />
       </div>
-      <footer>
-        <div>Clicks: {clicks}</div>
-        {won && <Button size='mini' color='blue' onClick={restart}>Restart</Button>}
-        <div>Pairs Found: {foundPairs.length / 2}</div>
-      </footer>
+      
     </div>
   )
 }
