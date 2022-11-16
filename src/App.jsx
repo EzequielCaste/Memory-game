@@ -14,7 +14,7 @@ const App = () => {
   const [clicks, setClicks] = useState(0);
   const [activeCards, setActiveCards] = useState([]);
   const [foundPairs, setFoundPairs] = useState([]);
-  const [won, setWon] = useState(false);
+  const [won, setWon] = useState(true);
   const [open, setOpen] = useState(false);
 
   function flipCard(index) {

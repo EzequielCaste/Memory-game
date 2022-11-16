@@ -8,10 +8,10 @@ const Footer = ({clicks, won, pairs, restart}) => {
   return (
     <footer>      
       <div className='stats'>
-        <span>Clicks: {clicks}</span>
-        {won && <Button size='mini' color='blue' onClick={restart}>Restart</Button>}
+        <span>Clicks: {clicks}</span>        
         <span>Pairs Found: {pairs}</span>   
       </div>
+      {won && <Button size='mini' color='blue' onClick={restart}>Restart</Button>}
       <div className='links'>
       &copy; 2022 Ezequiel Castellanos{' '}
           <a
