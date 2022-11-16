@@ -1,19 +1,23 @@
 import React, { useState } from 'react'
+import { Grid } from 'semantic-ui-react';
 
-const MemoryCard = ({ character }) => {
-  const { id, image } = character;
+const MemoryCard = ({ character, setCurrentPair, setFlipped }) => {
+  const { id, image, flipped } = character;
 
-  const [flipped, setFlipped] = useState(false);
+  //const [flipped, setFlipped] = useState(false);
 
   function flipCard() {
-    setFlipped(true)
-    setTimeout(() => {
-      setFlipped(false)
-    }, 2000)
+    if(!flipped){
+      setFlipped(id)
+      setCurrentPair(prev => [...prev, id])
+    } else {
+      console.log('already flipped');
+    }
+    
   }
 
   return (
-    <div key={id} onClick={flipCard} className="card">
+    <Grid.Column key={id} onClick={flipCard} className="card">
       <div
         id="back"
         className={flipped ? 'cardBack flipped' : 'cardBack'}
@@ -26,7 +30,7 @@ const MemoryCard = ({ character }) => {
         className={flipped ? 'cardFront flipped' : 'cardFront'}
 
       ></div>
-    </div>
+    </Grid.Column>
   )
 }
 
